@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QLD | Brainmap</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=visualization"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="banner"></div>
+		<div class="wrapper">
+			<div class="nav">
+				<div class="parent" id="BrisbaneCity" onclick="fetchAjaxData('parent', 'BrisbaneCity')">
+					<div class="icon"></div>
+                    <div class="title">Brisbane City</div>
+                    <div class="slide"></div>
+				</div>
+				<div class="child-wrapper">
+					<div class="child" id="BikeRacks" onclick="navToggleChild('BrisbaneCity', 'BikeRacks')">
+						<div class="spacer"></div>
+                        <div class="icon"></div>
+                        <div class="title">Bike Racks</div>
+					</div>
+					<div class="child" id="DrinkingFountains" onclick="navToggleChild('BrisbaneCity', 'DrinkingFountains')">
+						<div class="spacer"></div>
+                        <div class="icon"></div>
+                        <div class="title">Drinking Fountains</div>
+					</div>
+					<div class="child" id="WiFi" onclick="navToggleChild('BrisbaneCity', 'WiFi')">
+						<div class="spacer"></div>
+                        <div class="icon"></div>
+                        <div class="title">Free WiFi</div>
+					</div>
+					<div class="child" id="GolfCourse" onclick="navToggleChild('BrisbaneCity', 'GolfCourse')">
+						<div class="spacer"></div>
+                        <div class="icon"></div>
+                        <div class="title">Golf Cources</div>
+					</div>
+					<div class="child" id="ParkFacility" onclick="navToggleChild('BrisbaneCity', 'ParkFacility')">
+						<div class="spacer"></div>
+                        <div class="icon"></div>
+                        <div class="title">Parks</div>
+					</div>
+					<div class="child" id="Pool" onclick="navToggleChild('BrisbaneCity', 'Pool')">
+						<div class="spacer"></div>
+                        <div class="icon"></div>
+                        <div class="title">Public Pools</div>
+					</div>
+				</div>	
+			</div>
+			<div class="map">
+				<div id="map-canvas"></div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

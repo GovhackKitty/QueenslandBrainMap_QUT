@@ -1,0 +1,115 @@
+CREATE DATABASE  IF NOT EXISTS `social` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `social`;
+-- MySQL dump 10.13  Distrib 5.6.11, for Win64 (x86_64)
+--
+-- Host: localhost    Database: social
+-- ------------------------------------------------------
+-- Server version	5.6.11-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `admins` (
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admins`
+--
+
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES ('Wayne','5de772715ff750859d6efa965201bb4ccd059ed04740dd867d257007269a3f3b');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `msgNum` int(11) NOT NULL AUTO_INCREMENT,
+  `sender` int(11) NOT NULL,
+  `receiver` int(11) NOT NULL,
+  `msgText` text NOT NULL,
+  `msgDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `msgName` varchar(127) NOT NULL,
+  PRIMARY KEY (`msgNum`),
+  KEY `userID` (`sender`),
+  KEY `userID_idx` (`receiver`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `userID` int(20) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(64) NOT NULL,
+  `userPassword` varchar(255) NOT NULL,
+  `userEmail` varchar(255) NOT NULL,
+  `dob` date NOT NULL,
+  `userSQ` varchar(511) DEFAULT NULL,
+  `userAnswer` varchar(127) DEFAULT NULL,
+  `userFriends` varchar(3000) DEFAULT NULL,
+  `friendCount` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`userID`),
+  UNIQUE KEY `userName_UNIQUE` (`userName`),
+  UNIQUE KEY `userEmail_UNIQUE` (`userEmail`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (2,'David Locker','5d37d431109d86e6263ddb26b4a3f4b50bb0d99c1084dcc560dcafb59e324fc0','DL@yahoo.com','1950-02-01','Hello','Good Bye',NULL,0),(4,'Bob Tran','cd9fb1e148ccd8442e5aa74904cc73bf6fb54d1d54d333bd596aa9bb4bb4e961','SS@yahoo.com','1890-02-10',NULL,NULL,NULL,0),(5,'Steve','f148389d080cfe85952998a8a367e2f7eaf35f2d72d2599a5b0412fe4094d65c','steve@live.com','2010-04-04','There is no Question','There is no Answer',NULL,0),(6,'Ted','efb5a5ad7522096cd339dd8290cd39d346b8afcd0bee8b3f73d086e791dc907d','ted@gmail.com','1983-04-01',NULL,NULL,NULL,0),(7,'John','a8cfcd74832004951b4408cdb0a5dbcd8c7e52d43f7fe244bf720582e05241da','John@hotmail.com','1950-12-31',NULL,NULL,NULL,0);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2010-05-19 12:25:34

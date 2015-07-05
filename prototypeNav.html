@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QLD | Brainmap</title>
+    <!--<link rel="stylesheet" href="includes/style.css">-->
+    <!--<script src="includes/main.js" />-->
+    <link rel="stylesheet" href="includes/font-awesome/css/font-awesome.min.css">
+    <style>
+        *{margin: 0px 0px 0px 0px}
+        .spacer-body{height: 50px;}
+        .wrapper{width: 75%; height: 75%; align-content: center; margin: auto;}
+        
+        .nav{width: 25%; height: 100%; float: left; border: 1px solid;}
+        
+        .nav .spacer-child{width: 25px;}
+        
+        .nav .parent-wrapper{width: 100%; height: auto;}
+        .nav .parent{width: 100%; height: 35px; font-size: 16pt; line-height: 35px;}
+        .nav .parent .icon{width: 20%; height: 100%; float: left; text-align: center;}
+        .nav .parent .title{width: auto; height: 100%; float: left;}
+        .nav .parent .slide{font-size: 12px; margin-right: 5px; text-align: right;  float: right;}
+        
+        .nav .child-wrapper{display: none;}
+        .nav .child{width: 100%; height: 20px; font-size: 10pt; line-height:}
+        .nav .child .spacer{width: 10%; height: 100%; float: left;}
+        .nav .child .icon{width: 20%; height: 100%; float: left; text-align: center;}
+        .nav .child .title{width: 70%; height: 100%; float: left;}
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+
+$(document).ready(function(e){
+    $('#education-slide').on('click',function(){
+        $('#education-child').slideToggle();
+    });
+})
+    
+    
+    
+    
+    
+    
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="spacer-body"></div>
+        <div class="nav">
+            <div class="parent-wrapper">
+                <div class="parent" id="education-parent">
+                    <div class="icon"><i class="fa fa-book"></i></div>
+                    <div class="title">Education</div>
+                    <div class="slide" id="education-slide"><i class="fa fa-caret-square-o-down"></i></div>
+                </div>
+                <div class="child-wrapper" id="education-child">
+                    <div class="child">
+                        <div class="spacer">&nbsp;</div>
+                        <div class="icon"><i class="fa fa-book"></i></div>
+                        <div class="title">University</div>
+                    </div>
+                    <div class="child">
+                        <div class="spacer">&nbsp;</div>
+                        <div class="icon"><i class="fa fa-book"></i></div>
+                        <div class="title">TAFE</div>
+                    </div>
+                    <div class="child">
+                        <div class="spacer">&nbsp;</div>
+                        <div class="icon"><i class="fa fa-book"></i></div>
+                        <div class="title">High School</div>
+                    </div>
+                    <div class="child">
+                        <div class="spacer">&nbsp;</div>
+                        <div class="icon"><i class="fa fa-book"></i></div>
+                        <div class="title">Primary School</div>
+                    </div>
+                    <div class="child">
+                        <div class="spacer">&nbsp;</div>
+                        <div class="icon"><i class="fa fa-book"></i></div>
+                        <div class="title">Kindergarten</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@font-face{
+	font-family: customFont;
+	src: url('../font/ArvoR.ttf');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: customFont;
+	src: url('../font/ArvoB.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: customFont;
+	src: url('../font/ArvoR.ttf');
+	font-style: italic;
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: customFont;
+	src: url('../font/ArvoB.ttf');
+	font-weight: bold;
+	font-style: italic;
+}

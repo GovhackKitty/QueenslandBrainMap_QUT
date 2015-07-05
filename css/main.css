@@ -1,0 +1,428 @@
+body{
+	font-family: customFont;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Brisbane_During_Twilight.jpg/1920px-Brisbane_During_Twilight.jpg');
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100%;
+}
+#map-canvas {
+	width: auto;
+	min-height: 400px;
+	margin: auto;
+	padding: 0px
+}
+	  
+#content-wrapper{
+	min-width: 990px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+
+/***** HEADER SETTINGS *****/
+	#header {	
+		margin-top: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 10px;
+		padding-bottom: 10px;
+        //background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Brisbane_During_Twilight.jpg/1920px-Brisbane_During_Twilight.jpg');
+        
+        background-color: rgb(0, 0, 0);
+		height: 120px;
+		background-position: center;
+		border-left:1px solid black;
+		border-right:1px solid black;
+	}
+
+	/*Pointer change when mouse over header
+	  Used to indicate that header is a link*/
+	div#header:hover{
+		cursor: pointer;
+	}
+
+	/*Set properties for website icon or logo 
+	  in header*/
+	#headerIMG{
+		padding-left:20px;
+		padding-right: 10px;
+		float: left;
+		width: 150px;
+		height: 120px;
+	}
+
+	/*Set properties for website name
+	  in header*/
+	#headerTXT{
+		margin-left: 220px;
+		width: 100%-120px;
+		height: 120px;
+		padding-top: 30px;
+		color: white;
+		font-weight: bold;
+	}
+/*END OF HEADER SETTINGS*/
+
+
+/***** SETTINGS FOR TOP MENU BAR *****/
+	div.menuBar {
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		background-color: rgba(50, 50, 50, 1);
+		border-left:1px solid black;
+		border-right:1px solid black;
+		border-bottom:1px solid black;
+		/*inset used to create a shadow effect with each
+		inset layered with varying transparency and white 
+		to black color ratio */
+		box-shadow: 0px 5px 12px 0px rgba(255, 255, 255, 0.4) inset, 
+		0px 0px 5px 0px rgba(255, 255, 255, 0.4) inset, 
+		0px 15px 1px 0px rgba(255, 255, 255, 0.2) inset, 
+		0px 20px 10px 0px rgba(0, 0, 0, 0.3) inset;
+	}
+
+	/*Shift menu slightly to left so border-radius
+	  doesn't get graphical glitches*/
+	div.menu{
+		margin-left: 15px;
+		margin-right: auto;
+		text-align: left;
+	}
+
+	/*Settings for menu items in menu bar*/
+	div.menu a{
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-left: 20px;
+		padding-right: 20px;	
+		text-align: centre;
+		font-size:100%;
+		font-weight: bold;
+		color: white;   
+		text-decoration: none;
+		font-family: customFont;
+		border-right: 1px solid rgba(0,0,0, 0.3); 
+	}
+/*END OF TOP MENU BAR SETTINGS*/
+
+
+/***** LEFT BAR ITEMS SETTINGS *****/
+	.leftBar{
+		margin-top: 0px;
+		float: left;
+		margin-left: 0px;
+		width: 190px;
+	}
+
+	div.leftBar ul, div.leftBar li{
+		font-size:90%;
+		margin-top: 0px;
+		padding: 0px;
+		border: 0px none;
+		font-family: customFont;	
+		list-style: none;
+	} 
+
+	div.leftBar li {
+		margin-left:0px;
+		background-color: rgba(60, 60, 60, 0.9);
+	}
+
+	div.leftBar a {
+		display: block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 10%;
+		padding-right: 25%;
+		width: auto;
+		font-weight: bold;
+		background-color: transparent;
+		color: white;   
+		text-decoration: none;
+	}
+/*END OF LEFT BAR SETTINGS*/
+
+
+/*Mouse over settings for items*/
+div.menu a:hover, .leftBar a:hover{
+	background-color: rgba(238, 119, 51, 1);
+	/*inset used to create a shadow effect with each
+	inset layered with varying transparency and white 
+	to black color ratio */
+	box-shadow: 0px 5px 12px 0px rgba(255, 255, 255, 0.4) inset, 
+	0px 0px 5px 0px rgba(255, 255, 255, 0.4) inset, 
+	0px 15px 1px 0px rgba(255, 255, 255, 0.2) inset, 
+	0px 20px 10px 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+div.leftBar a:hover{
+}
+
+/***** RIGHT BAR ITEM SETTINGS *****/
+	.rightBar{
+		//line-height: 0em;
+		right: 0;
+		float: right;
+		margin: 0;
+		width: 22.5%;
+		display: block;
+		//position: absolute;
+	}
+
+	div.rightBar ul, div.rightBar ul li{
+		margin: 0;
+		padding: 0;
+		border: 0px none;
+		list-style: none;
+		display: block;
+	} 
+
+	div.rightBar ul li {
+		//padding-bottom: 10px;
+		//line-height: 0;
+		margin-left:0px;	
+		border-radius: 5px 5px 5px 5px;
+	}
+
+	div.rightBar ul li img{
+		display: block;
+		margin-top: 0px;
+		padding-bottom: 0px;
+		max-width: 100%;
+		min-width: 100%;
+		border-radius: 5px 5px 5px 5px;
+	}
+/*END OF RIGHT BAR SETTINGS*/
+
+
+/*MAIN CONTENTS SETTINGS*/
+	#middle-contents{
+		margin: 1em;
+		overflow: hidden;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+
+	div.middle {
+		//margin-left: 30%;
+	}
+
+	div.content, #loginContent {	
+		margin-left: 0;
+		font-size: 95%;
+		padding-bottom: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-radius: 0pt 0pt 5pt 5pt;
+		background-color: rgba(240,240,240,0.96);
+		overflow: auto;
+	}
+
+	div.contentTab {
+		font-size: 109%;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 20px;
+		margin-top: 0px;
+		background-color: rgba(238,119,51,0.96);
+		/*converting ee 77 33 from hexadecimal to decimal is 238, 119, 51*/
+		font-weight: bold;
+		color: white;
+		text-align: left;
+		border-radius: 5pt 5pt 0pt 0pt;
+		box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3) inset;
+	}
+
+	div.content .large-font, .content .indented{
+		margin-left: 5px;
+		font-size: 200%;
+	}
+	
+	div.content .indented{
+		margin-left: 2em;
+		color: #3AA6D0;
+	}
+	
+	div.content .lrge-indent{
+		font-size: 200%;
+		margin-left: 1em;
+		color: rgba(238,119,51, 1);
+	}
+	
+	div.content a, .content a:hover{
+		box-shadow: 0px 10px 5px 0px rgba(255, 255, 255, 0.2) inset,
+			0px 5px 15px 0px rgba(255, 255, 255, 0.4) inset,
+			0px 0px 10px 0px rgba(0, 0, 0, 0.6) inset;
+		background-color: rgba(120, 200, 50, 1); 
+		border-radius: 1em 1em 1em 1em;
+		padding: 20px;
+		color: rgba(240, 240, 240, 1);
+		text-decoration: none;
+	}
+	
+	div.content a:hover{
+		background-color: rgba(80, 200, 20, 1); 
+		cursor: pointer;
+	}
+	
+	div.content h1, h2, h3, h4, h5, h6{
+	}
+/*END OF MAIN CONTENTS SETTINGS*/
+
+
+.ignore {
+	display: none; !important	
+}
+
+/***** FOOTER SETTINGS *****/
+	#footer{
+		text-align: center;
+		min-width: 990px;
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-top: 20px;
+		color: white;
+		clear: both;
+		background-color: rgba(30, 30, 30, 0.9);
+		border-radius: 5pt 5pt 5pt 5pt;
+	}
+
+	#footer .topics{
+        text-align: center;
+		height: 180px;
+		min-width: 990px;
+	}
+
+	div.topics .col{
+		border-right: 2px solid #151515;
+		height: 180px;
+		width: 220px;
+		float: left;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+    div.col a{
+        color: inherit;
+        text-decoration: none;
+    }
+    
+	div.topics .col img{
+		max-height: 120px;
+		max-width: 150px;
+		padding-bottom: 20px;
+	}
+
+	#footer h1, #footer h2, #footer h3, #footer h4 {
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+	div.topics .col:hover{
+		cursor: pointer;
+		color: rgba(238, 119, 51, 1);
+	}
+	div.topics .first-col{
+		width: 240px;
+	}
+
+	div.topics .last-col{
+		border: none;
+	}
+
+	#footer .info-tag{
+		font-size: 80%;
+		background-color: rgba(10, 10, 10, 0.9);
+		border-radius: 0pt 0pt 5pt 5pt;
+		padding-top: 10px;
+		text-align: left;
+		padding-left: 20px;
+		margin-bottom: 0px;
+		padding-bottom: 10px;
+		bottom: 0;
+	}
+
+	#footer .info-tag .disclaimer, #footer .info-tag .disclaimer a{
+		text-decoration: none;
+		float: right;
+		color: white;
+		margin-right: 12pt;
+		margin-left: 12pt;
+	}
+
+	div#footer .info-tag .disclaimer a:hover{
+		color: rgba(238, 119, 51, 1);
+	}
+/*END OF FOOTER SETTINGS*/
+
+
+/***** FORM SETTINGS *****/
+	span{
+		font-size: 80%;
+		padding-left: 5px;
+		visibility: hidden;
+		color: red;
+	}
+	
+	div.logInBox{
+		margin-right: auto;
+		margin-left: auto;
+		width: 500px;	
+	}
+
+	div.centerTxt{
+		text-align: center;
+	}
+
+	#loginContent{
+		line-height: 200%;
+		padding-top: 40px;
+		padding-bottom: 20px;
+	}
+
+	textarea{
+		resize: none;
+	}
+
+	label{
+		float: left;
+		margin-right: 20px;
+		width: 35%;
+		text-align: right;
+		font-weight: bold;
+	}
+
+	option{
+		text-align: right;
+
+	}
+
+	select{
+		text-align: center;
+	}
+/*END OF FORM SETTINGS*/
+
+/* NAV SETTINGS */
+	.nav{ font-family: customFont; height: 100%; color: white}
+			
+	.nav .spacer-child{width: 25px;}
+
+	.nav .parent-wrapper{width: 100%; height: auto;}
+	.nav .parent{width: 100%; height: 35px; font-size: 12pt; line-height: 35px;}
+	.nav .parent .icon{width: 20%; height: 100%; float: left; text-align: center;}
+	.nav .parent .title{width: auto; height: 100%; float: left;}
+	.nav .parent .slide{font-size: 12px; margin-right: 5px; text-align: right;  float: right;}
+
+	.nav .child-wrapper{display: none;}
+	.nav .child{width: 100%; height: 20px; font-size: 10pt; line-height:}
+	.nav .child .spacer{width: 10%; height: 100%; float: left;}
+	.nav .child .icon{width: 20%; height: 100%; float: left; text-align: center;}
+	.nav .child .title{width: 70%; height: 100%; float: left;}

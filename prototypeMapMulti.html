@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        width: 750px;
+        height: 750px;
+        margin: auto;
+        padding: 0px
+      }
+        .spacer{height: 50px;}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=visualization"></script>
+    <script>
+function initialize() {
+// Create the initial Map
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 15,
+        center: new google.maps.LatLng(-27.493923, 153.013620),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true
+    });
+};
+// ------------------------------| EDUCATION |------------------------------ //
+// -----| University
+var locationsUniversity = [
+    new google.maps.LatLng(-27.492667, 153.010144),
+    new google.maps.LatLng(-27.493124, 153.012891),
+    new google.maps.LatLng(-27.494114, 153.011775)
+];
+
+// Array to hold Marker Objects
+var markersUniversity = [];
+
+// Create the Marker Objects
+for (i = 0; i < locationsUniversity.length; i++) { 
+    // Create the marker object
+    var marker = new google.maps.Marker({
+        position: locationsUniversity[i],
+        title: 'Hello World!'
+    });
+    // Add the object to the markers Array
+    markersUniversity.push(marker);
+};
+
+// Toggle Markers on/off
+function pinsUniversity() {
+    for (i = 0; i < markersUniversity.length; i++) {
+        if (markersUniversity[i].getMap() == null) {
+            markersUniversity[i].setMap(map);
+        } else {
+            markersUniversity[i].setMap(null);
+        }
+    };
+};
+
+// -----| TAFE
+var TAFE = [
+    new google.maps.LatLng(-27.496550, 153.015852),
+    new google.maps.LatLng(-27.496664, 153.006153),
+    new google.maps.LatLng(-27.493162, 153.011432)
+];
+
+// -----| HighSchool
+var HighSchool = [
+    new google.maps.LatLng(-27.494723, 153.004050),
+    new google.maps.LatLng(-27.498491, 153.006067),
+    new google.maps.LatLng(-27.499367, 153.011217)
+];
+
+// -----| Primary School
+var locationsPrimarySchool = [
+    new google.maps.LatLng(-27.498377, 153.014822),
+    new google.maps.LatLng(-27.499405, 153.019371),
+    new google.maps.LatLng(-27.501004, 153.011174)
+];
+// Array to hold Marker Objects
+var markersPrimarySchool = [];
+
+// Create the Marker Objects
+for (i = 0; i < locationsPrimarySchool.length; i++) { 
+    // Create the marker object
+    var marker = new google.maps.Marker({
+        position: locationsPrimarySchool[i],
+        title: 'Hello World!'
+    });
+    // Add the object to the markers Array
+    markersPrimarySchool.push(marker);
+};
+
+// Toggle Markers on/off
+function togglePrimarySchool() {
+    for (i = 0; i < markersPrimarySchool.length; i++) {
+        if (markersPrimarySchool[i].getMap() == null) {
+            markersPrimarySchool[i].setMap(map);
+        } else {
+            markersPrimarySchool[i].setMap(null);
+        }
+    };
+};
+
+// -----| Kindergarten
+var Kindergarten = [
+    new google.maps.LatLng(-27.497235, 153.015552),
+    new google.maps.LatLng(-27.501308, 153.006196),
+    new google.maps.LatLng(-27.498377, 153.006411)
+];
+
+
+
+// Display the Map
+google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div class="spacer"></div>
+    <div id="map-canvas"></div>
+    <button onclick="togglePrimarySchool()">Click Me!</button>
+  </body>
+</html>

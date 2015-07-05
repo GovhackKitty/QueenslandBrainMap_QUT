@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_queenslandbrainmap_qut" default="compile.module.queenslandbrainmap_qut">
+  <dirname property="module.queenslandbrainmap_qut.basedir" file="${ant.file.module_queenslandbrainmap_qut}"/>
+  
+  <property name="module.jdk.home.queenslandbrainmap_qut" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.queenslandbrainmap_qut" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.queenslandbrainmap_qut" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.queenslandbrainmap_qut" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="queenslandbrainmap_qut.output.dir" value="${module.queenslandbrainmap_qut.basedir}/out/production/queenslandbrainmap_qut"/>
+  <property name="queenslandbrainmap_qut.testoutput.dir" value="${module.queenslandbrainmap_qut.basedir}/out/test/queenslandbrainmap_qut"/>
+  
+  <path id="queenslandbrainmap_qut.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="queenslandbrainmap_qut.module.production.classpath">
+    <path refid="${module.jdk.classpath.queenslandbrainmap_qut}"/>
+    <path refid="library.commons-io-2.4.classpath"/>
+  </path>
+  
+  <path id="queenslandbrainmap_qut.runtime.production.module.classpath">
+    <pathelement location="${queenslandbrainmap_qut.output.dir}"/>
+    <path refid="library.commons-io-2.4.classpath"/>
+  </path>
+  
+  <path id="queenslandbrainmap_qut.module.classpath">
+    <path refid="${module.jdk.classpath.queenslandbrainmap_qut}"/>
+    <pathelement location="${queenslandbrainmap_qut.output.dir}"/>
+    <path refid="library.commons-io-2.4.classpath"/>
+  </path>
+  
+  <path id="queenslandbrainmap_qut.runtime.module.classpath">
+    <pathelement location="${queenslandbrainmap_qut.testoutput.dir}"/>
+    <pathelement location="${queenslandbrainmap_qut.output.dir}"/>
+    <path refid="library.commons-io-2.4.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.queenslandbrainmap_qut">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.queenslandbrainmap_qut">
+    <patternset refid="excluded.from.module.queenslandbrainmap_qut"/>
+  </patternset>
+  
+  <path id="queenslandbrainmap_qut.module.sourcepath">
+    <dirset dir="${module.queenslandbrainmap_qut.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.queenslandbrainmap_qut" depends="compile.module.queenslandbrainmap_qut.production,compile.module.queenslandbrainmap_qut.tests" description="Compile module queenslandbrainmap_qut"/>
+  
+  <target name="compile.module.queenslandbrainmap_qut.production" depends="register.custom.compilers" description="Compile module queenslandbrainmap_qut; production classes">
+    <mkdir dir="${queenslandbrainmap_qut.output.dir}"/>
+    <javac2 destdir="${queenslandbrainmap_qut.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.queenslandbrainmap_qut}/javac">
+      <compilerarg line="${compiler.args.queenslandbrainmap_qut}"/>
+      <bootclasspath refid="queenslandbrainmap_qut.module.bootclasspath"/>
+      <classpath refid="queenslandbrainmap_qut.module.production.classpath"/>
+      <src refid="queenslandbrainmap_qut.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.queenslandbrainmap_qut"/>
+    </javac2>
+    
+    <copy todir="${queenslandbrainmap_qut.output.dir}">
+      <fileset dir="${module.queenslandbrainmap_qut.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.queenslandbrainmap_qut.tests" depends="register.custom.compilers,compile.module.queenslandbrainmap_qut.production" description="compile module queenslandbrainmap_qut; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.queenslandbrainmap_qut" description="cleanup module">
+    <delete dir="${queenslandbrainmap_qut.output.dir}"/>
+    <delete dir="${queenslandbrainmap_qut.testoutput.dir}"/>
+  </target>
+</project>
